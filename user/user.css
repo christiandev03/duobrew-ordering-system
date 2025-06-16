@@ -1,0 +1,342 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #f4f2ea;
+}
+.header {
+    background-color: #B57C4F;
+    color: white;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+}
+.logo {
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+.logo img {
+    height: 200%;
+}
+.header-icons {
+    display: flex;
+    gap: 5px; /* Set the gap to 5px */
+    margin-left: auto;
+}
+.header-icon {
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 14px;
+    margin-right: 20px; /* Add margin to the right */
+}
+.header-icon i {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+.main-container {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+.left-panel {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    padding: 15px;
+}
+.right-panel {
+    flex: 1;
+    background-color: white;
+    border-left: 1px solid #ddd;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+.category-selection {
+    margin-bottom: 20px;
+}
+.category-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.category-buttons {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    padding-bottom: 10px;
+}
+.category-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 80px;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
+.category-button img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    margin-bottom: 5px;
+}
+.category-button.active {
+    background-color: #ffefd5;
+    border: 2px solid #B57C4F;
+}
+.menu-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 15px 0;
+}
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 15px;
+    padding-bottom: 20px;
+}
+.product-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.product-content {
+    display: flex;
+    gap: 15px;
+}
+.product-image {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+.product-details {
+    flex: 1;
+}
+.product-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.product-description {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+.product-price {
+    font-weight: bold;
+    color: #B57C4F;
+    margin-bottom: 10px;
+}
+.product-options {
+    margin-top: 10px;
+}
+.option-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.option-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+.option-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 12px;
+}
+.option-button:hover, .option-button.selected {
+    background-color: #ffefd5;
+    border-color: #B57C4F;
+}
+.add-button {
+    background-color: #B57C4F;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.bill-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+.bill-items {
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: 15px;
+}
+.bill-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    position: relative;
+}
+.bill-item-image {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-right: 10px;
+}
+.bill-item-details {
+    flex: 1;
+}
+.bill-item-title {
+    font-weight: bold;
+}
+.bill-item-price {
+    color: #B57C4F;
+}
+.bill-item-quantity {
+    background-color: #f0f0f0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px; /* Move quantity a bit to the left */
+    margin-right: auto; /* Push the remove button to the right */
+}
+.bill-item-remove {
+    background-color: transparent;
+    border: none;
+    color: red;
+    font-size: 20px;
+    cursor: pointer;
+    transition: color 0.3s;
+    margin-left: 10px; /* Add margin to the left */
+}
+
+.bill-item-remove:hover {
+    color: darkred;
+}
+.bill-summary {
+    border-top: 1px solid #ddd;
+    padding-top: 15px;
+}
+.bill-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.bill-total {
+    font-weight: bold;
+    font-size: 18px;
+}
+.payment-methods {
+    display: flex;
+    gap: 10px;
+    margin: 15px 0;
+}
+.payment-method {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+    flex: 1;
+}
+.payment-method.selected {
+    background-color: #ffefd5;
+    border-color: #B57C4F;
+}
+.print-bill-button {
+    background-color: #B57C4F;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 15px;
+    width: 100%;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+}
+/* Make the form elements hidden */
+.option-form {
+    display: none;
+}
+.search-container {
+    margin: 20px 10px;
+    display: flex;
+    align-items: center;
+}
+.search-container input {
+    width: 200px;
+    padding: 5px;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+.search-container button {
+    background: transparent;
+    border: none;
+    margin-left: -30px;
+    color: #777;
+    cursor: pointer;
+}
+
+.order-history {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+}
+
+.order-history-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.order-history-list {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.order-history-item {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.order-history-item:last-child {
+    border-bottom: none;
+}
+
+.no-orders {
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+}

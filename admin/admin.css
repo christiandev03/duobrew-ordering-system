@@ -1,0 +1,204 @@
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+/* Top header (adding this as new) */
+.page-header {
+    background-color:  #B57C4F;
+    color: white;
+    padding: 20px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.329);
+    margin-bottom: 0;
+    border-color: #fff;
+    border-bottom: 1px solid #000000;
+}
+
+.page-header h1 {
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.user-role {
+    color: #ab734c;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+/* Keep the sidebar as is, but adjust some styling */
+.sidebar {
+    width: 250px;
+    background-color:  #B57C4F;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar a {
+    display: block;
+    padding: 15px 20px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.sidebar a:hover {
+    background-color: #c69c6d;
+}
+
+.sidebar i {
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+}
+
+/* Adjust content area */
+.content {
+    margin-left: 250px;
+    padding: 25px;
+    padding-top: 90px; /* Adjust for header */
+}
+
+/* Enhance the dashboard cards */
+.dashboard-overview {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.card i {
+    font-size: 3rem;
+    color: #B57C4F;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    font-size: 2.2rem;
+    margin-bottom: 5px;
+    color: #333;
+    font-weight: 600;
+}
+
+.card p {
+    color: #777;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* Section headings */
+h3 {
+    color: #444;
+    font-size: 1.3rem;
+    margin: 25px 0 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #B57C4F;
+}
+
+/* Tables styling - make more compact */
+table {
+    width: 70%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    margin-bottom: 25px;
+    font-size: 16px;
+    margin-left: 230px;
+}
+
+th {
+    background-color: #B57C4F;
+    color: white;
+    padding: 10px 15px;
+    text-align: left;
+    font-weight: 600;
+}
+
+td {
+    padding: 8px 15px;
+    border-bottom: 1px solid #eee;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:hover {
+    background-color: #f9f9f9;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .dashboard-overview {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 70px;
+    }
+    
+    .sidebar a span {
+        display: none;
+    }
+    
+    .sidebar i {
+        margin-right: 0;
+        font-size: 1.2rem;
+    }
+    
+    .content {
+        margin-left: 70px;
+    }
+    
+    .dashboard-overview {
+        grid-template-columns: 1fr;
+    }
+}
+
+.h1{
+    font-size: 30px;
+    margin: 0;
+    text-align: center;
+    color: #ffffff;
+}
+
+.active{
+    background-color: #866948;
+}
